@@ -1,5 +1,5 @@
 export type athleteDataTypes = {
-  id: number;
+  id: string;
   name: string;
   pot: 1 | 2 | 3 | 4;
 };

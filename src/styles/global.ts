@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
   }
   
-  *, input, select, textarea {
+  *, input, select, textarea, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -56,13 +56,13 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .inputError {
-    color: ${({ theme }) => theme.colors.PRIMARY700};
+    color: ${({ theme }) => theme.colors.PRIMARY400};
     font-size: 1.2rem;
     display: block;
     position: absolute;
     margin-top: 0.6rem;
     right: 0;
-    text-shadow: 1px 1px 1px #0008;
+    text-shadow: 1px 1px 1px #0004;
   }
 
   .loading {
