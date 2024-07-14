@@ -10,13 +10,11 @@ type TypeProps = {
 export function CardPot({ name, athletes }: TypeProps) {
   return (
     <Container>
-      <div className="pot">
-        <h3>{name}</h3>
-        <div className="athletes">
-          {athletes.map((athlete) => {
-            return <CardAthlete name={athlete.name} key={athlete.id} />;
-          })}
-        </div>
+      <h3>{name}</h3>
+      <div className="athletes">
+        {athletes.map((athlete) => {
+          return <CardAthlete name={athlete.name} key={athlete.id} />;
+        })}
       </div>
     </Container>
   );

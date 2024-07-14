@@ -54,7 +54,7 @@ export function Register() {
       <FormRegister />
 
       <div className="pots">
-        <CardPot name="POTE 1" athletes={port1} />
+        <CardPot name="POTE 1 (cabeça de chave)" athletes={port1} />
         <CardPot name="POTE 2" athletes={port2} />
         <CardPot name="POTE 3" athletes={port3} />
         <CardPot name="POTE 4" athletes={port4} />
