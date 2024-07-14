@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,7 +9,8 @@ export const Container = styled.div`
 
   header {
     text-align: center;
-    padding: 2rem 0 0.8rem;
+    padding: 1.6rem 0 1.6rem;
+    width: 100%;
 
     .addAthleteButton {
       position: absolute;
@@ -31,16 +31,18 @@ export const Container = styled.div`
     }
 
     img {
-      width: 32rem;
+      width: 28rem;
     }
   }
 
   main {
     flex: 1;
+    width: 100%;
   }
 
   footer {
     padding: 2.4rem;
+    width: 100%;
 
     a {
       display: flex;

@@ -65,23 +65,27 @@ export function FormRegister() {
       </section>
 
       <section>
-        <label htmlFor="pot">Pote:</label>
-        <select
-          id="pot"
-          {...register("pot", {
-            required: "Campo obrigatório!",
-          })}
-        >
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-        </select>
+        <label htmlFor="pot">
+          Pote:
+          <select
+            id="pot"
+            {...register("pot", {
+              required: "Campo obrigatório!",
+            })}
+          >
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </label>
 
         <span className="inputError">{errors.pot?.message}</span>
       </section>
 
-      <button type="submit">Registrar</button>
+      <section>
+        <button type="submit">Registrar</button>
+      </section>
     </Container>
   );
 }
