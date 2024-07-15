@@ -44,8 +44,6 @@ export function FormRegister() {
     setListAthletes(athletesFromStorage);
   }, []);
 
-  console.log(listAthletes);
-
   return (
     <Container onSubmit={handleSubmit(onSubmit)}>
       <section>
