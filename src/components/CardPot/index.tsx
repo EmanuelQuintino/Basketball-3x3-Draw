@@ -1,7 +1,6 @@
 import { Container } from "./style";
 import { Draggable } from "react-beautiful-dnd";
 import { athleteDataTypes } from "../../@types/athlete";
-import { CardAthlete } from "../CardAthlete";
 
 type TypeProps = {
   name: string;
@@ -27,8 +26,15 @@ export function CardPot({ name, athletes, topSeed = false, indexStart = 0 }: Typ
                   {...provided.draggableProps}
                   {...provided.dragHandleProps}
                   ref={provided.innerRef}
+                  className={topSeed ? "topSeed" : ""}
                 >
-                  <CardAthlete name={athlete.name} topSeed={topSeed} />
+                  <i className="material-icons">drag_indicator</i>
+
+                  <strong>{athlete.name}</strong>
+
+                  <button>
+                    <i className="material-icons">close</i>
+                  </button>
                 </div>
               )}
             </Draggable>
