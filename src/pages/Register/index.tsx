@@ -38,44 +38,42 @@ export function Register() {
     <Container>
       <FormRegister />
 
-      {listAthletes.length > 0 && (
-        <DragDropContext onDragEnd={handleDragEnd}>
-          <div className="pots">
-            <Droppable droppableId="pot1" type="group">
-              {(provided) => (
-                <div ref={provided.innerRef} {...provided.droppableProps}>
-                  <CardPot name="POTE 1" athletes={pot1} topSeed />
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-            <Droppable droppableId="pot2" type="group">
-              {(provided) => (
-                <div ref={provided.innerRef} {...provided.droppableProps}>
-                  <CardPot name="POTE 2" athletes={pot2} indexStart={indexStartPot2} />
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-            <Droppable droppableId="pot3" type="group">
-              {(provided) => (
-                <div ref={provided.innerRef} {...provided.droppableProps}>
-                  <CardPot name="POTE 3" athletes={pot3} indexStart={indexStartPot3} />
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-            <Droppable droppableId="pot4" type="group">
-              {(provided) => (
-                <div ref={provided.innerRef} {...provided.droppableProps}>
-                  <CardPot name="POTE 4" athletes={pot4} indexStart={indexStartPot4} />
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </div>
-        </DragDropContext>
-      )}
+      <DragDropContext onDragEnd={handleDragEnd}>
+        <div className="pots">
+          <Droppable droppableId="pot1" type="group">
+            {(provided) => (
+              <div ref={provided.innerRef} {...provided.droppableProps}>
+                <CardPot name="POTE 1" athletes={pot1} topSeed />
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+          <Droppable droppableId="pot2" type="group">
+            {(provided) => (
+              <div ref={provided.innerRef} {...provided.droppableProps}>
+                <CardPot name="POTE 2" athletes={pot2} indexStart={indexStartPot2} />
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+          <Droppable droppableId="pot3" type="group">
+            {(provided) => (
+              <div ref={provided.innerRef} {...provided.droppableProps}>
+                <CardPot name="POTE 3" athletes={pot3} indexStart={indexStartPot3} />
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+          <Droppable droppableId="pot4" type="group">
+            {(provided) => (
+              <div ref={provided.innerRef} {...provided.droppableProps}>
+                <CardPot name="POTE 4" athletes={pot4} indexStart={indexStartPot4} />
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </div>
+      </DragDropContext>
     </Container>
   );
 }
