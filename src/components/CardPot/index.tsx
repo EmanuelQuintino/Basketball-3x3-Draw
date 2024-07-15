@@ -21,22 +21,24 @@ export function CardPot({ name, athletes, topSeed = false, indexStart = 0 }: Typ
               draggableId={athlete.id}
               index={indexStart + index}
             >
-              {(provided) => (
-                <div
-                  {...provided.draggableProps}
-                  {...provided.dragHandleProps}
-                  ref={provided.innerRef}
-                  className={topSeed ? "topSeed" : ""}
-                >
-                  <i className="material-icons">drag_indicator</i>
+              {(provided) => {
+                return (
+                  <div
+                    ref={provided.innerRef}
+                    {...provided.draggableProps}
+                    {...provided.dragHandleProps}
+                    className={topSeed ? "topSeed" : ""}
+                  >
+                    <i className="material-icons">drag_indicator</i>
 
-                  <strong>{athlete.name}</strong>
+                    <strong>{athlete.name}</strong>
 
-                  <button>
-                    <i className="material-icons">close</i>
-                  </button>
-                </div>
-              )}
+                    <button>
+                      <i className="material-icons">close</i>
+                    </button>
+                  </div>
+                );
+              }}
             </Draggable>
           );
         })}

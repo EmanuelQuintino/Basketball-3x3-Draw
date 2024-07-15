@@ -19,13 +19,15 @@ export function Register() {
   const indexStartPot4 = pot1.length + pot2.length + pot3.length;
 
   function onDragEnd(result: DropResult) {
-    // if (!result.destination) return;
+    if (!result.destination) return;
 
-    console.log("onDragEnd");
-    console.log(result);
+    const { source, destination } = result;
+    const reorderedAthletes = [...listAthletes];
+    const [removed] = reorderedAthletes.splice(source.index, 1);
+    reorderedAthletes.splice(destination.index, 0, removed);
 
-    // const updatedAthletes = setListAthletes(result);
-    // localStorage.setItem("@basketball-draw:athletes", JSON.stringify(updatedAthletes));
+    setListAthletes(reorderedAthletes);
+    // localStorage.setItem("@basketball-draw:athletes", JSON.stringify(reorderedAthletes));
   }
 
   useEffect(() => {
@@ -43,16 +45,18 @@ export function Register() {
       <FormRegister />
 
       <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId="pots">
-          {(provided) => (
-            <div className="pots" ref={provided.innerRef} {...provided.droppableProps}>
-              <CardPot name="POTE 1" athletes={pot1} topSeed />
-              <CardPot name="POTE 2" athletes={pot2} indexStart={indexStartPot2} />
-              <CardPot name="POTE 3" athletes={pot3} indexStart={indexStartPot3} />
-              <CardPot name="POTE 4" athletes={pot4} indexStart={indexStartPot4} />
-              {provided.placeholder}
-            </div>
-          )}
+        <Droppable droppableId="pots1234" type="pot">
+          {(provided) => {
+            return (
+              <div className="pots" ref={provided.innerRef} {...provided.droppableProps}>
+                <CardPot name="POTE 1" athletes={pot1} topSeed />
+                <CardPot name="POTE 2" athletes={pot2} indexStart={indexStartPot2} />
+                <CardPot name="POTE 3" athletes={pot3} indexStart={indexStartPot3} />
+                <CardPot name="POTE 4" athletes={pot4} indexStart={indexStartPot4} />
+                {provided.placeholder}
+              </div>
+            );
+          }}
         </Droppable>
       </DragDropContext>
     </Container>
