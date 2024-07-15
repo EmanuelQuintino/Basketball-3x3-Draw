@@ -1,0 +1,28 @@
+import { athleteDataTypes } from "../@types/athlete";
+
+export const athletesStorage: athleteDataTypes[] = [
+  { id: "1", name: "A1", pot: 1 },
+  { id: "2", name: "A2", pot: 1 },
+  { id: "3", name: "A3", pot: 1 },
+  { id: "4", name: "A4", pot: 1 },
+  { id: "5", name: "A5", pot: 1 },
+  { id: "6", name: "A6", pot: 1 },
+  { id: "7", name: "B1", pot: 2 },
+  { id: "8", name: "B2", pot: 2 },
+  { id: "9", name: "B3", pot: 2 },
+  { id: "10", name: "B4", pot: 2 },
+  { id: "11", name: "B5", pot: 2 },
+  { id: "12", name: "B6", pot: 2 },
+  { id: "13", name: "C1", pot: 3 },
+  { id: "14", name: "C2", pot: 3 },
+  { id: "15", name: "C3", pot: 3 },
+  { id: "16", name: "C4", pot: 3 },
+  { id: "17", name: "C5", pot: 3 },
+  { id: "18", name: "C6", pot: 3 },
+  { id: "19", name: "D1", pot: 4 },
+  { id: "20", name: "D2", pot: 4 },
+  { id: "21", name: "D3", pot: 4 },
+  { id: "22", name: "D4", pot: 4 },
+  { id: "23", name: "D5", pot: 4 },
+  { id: "24", name: "D6", pot: 4 },
+];

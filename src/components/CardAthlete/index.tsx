@@ -6,12 +6,8 @@ type TypeProps = {
 };
 
 export function CardAthlete({ name, topSeed = false }: TypeProps) {
-  function drag() {
-    console.log("drag!");
-  }
-
   return (
-    <Container topSeed={topSeed} draggable onDrag={drag}>
+    <Container topSeed={topSeed}>
       <i className="material-icons">drag_indicator</i>
       <strong>{name}</strong>
 

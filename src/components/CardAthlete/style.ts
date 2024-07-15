@@ -17,7 +17,7 @@ export const Container = styled.div<TypeContainer>`
     topSeed ? `${theme.colors.DARK200}` : `${theme.colors.DARK200}88`};
 
   &:hover {
-    cursor: grab;
+    /* cursor: grab; */
     filter: brightness(0.9);
   }
 

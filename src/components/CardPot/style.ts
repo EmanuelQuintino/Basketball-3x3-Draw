@@ -18,6 +18,10 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 0.8rem;
     margin-top: 0.8rem;
+
+    div {
+      width: 100%;
+    }
   }
 
   @media (min-width: 768px) {
