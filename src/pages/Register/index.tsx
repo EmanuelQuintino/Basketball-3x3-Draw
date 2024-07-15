@@ -4,6 +4,10 @@ import { useEffect, useState } from "react";
 import { FormRegister } from "../../components/FormRegister";
 import { CardPot } from "../../components/CardPot";
 import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
+import { KEY_ATHLETES_STORAGE } from "../../configs/keyAthletesStorage";
+
+// import { athletesStorage } from "../../configs/athletesStorage";
+// localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(athletesStorage));
 
 export function Register() {
   const [listAthletes, setListAthletes] = useState([] as athleteDataTypes[]);
@@ -18,18 +22,53 @@ export function Register() {
   const indexStartPot4 = pot1.length + pot2.length + pot3.length;
 
   function handleDragEnd(result: DropResult) {
+    const { source, destination, type } = result;
+
     if (!result.destination) return;
 
-    // const { source, destination } = result;
+    if (
+      source.droppableId == destination?.droppableId &&
+      source.index == destination.index
+    ) {
+      return;
+    }
 
-    // setListAthletes(updatedAthletes);
+    if (type == "group" && destination?.index) {
+      console.log(destination.index);
+      console.log(Math.ceil((destination.index + 1) / 6));
 
-    // localStorage.setItem("@basketball-draw:athletes", JSON.stringify(updatedAthletes));
+      const reorderListAthletes = [...listAthletes];
+      const [removedAthlete] = reorderListAthletes.splice(source.index, 1);
+
+      let pot;
+      switch (destination.droppableId) {
+        case "pot1":
+          pot = 1;
+          break;
+        case "pot2":
+          pot = 2;
+          break;
+        case "pot3":
+          pot = 3;
+          break;
+        case "pot4":
+          pot = 4;
+          break;
+      }
+
+      if (pot == 1 || pot == 2 || pot == 3 || pot == 4) removedAthlete.pot = pot;
+
+      reorderListAthletes.splice(destination.index, 0, removedAthlete);
+
+      setListAthletes(reorderListAthletes);
+      localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(reorderListAthletes));
+      console.log(removedAthlete);
+    }
   }
 
   useEffect(() => {
     const athletesFromStorage = JSON.parse(
-      localStorage.getItem("@basketball-draw:athletes") || "[]"
+      localStorage.getItem(KEY_ATHLETES_STORAGE) || "[]"
     );
     setListAthletes(athletesFromStorage);
   }, []);
