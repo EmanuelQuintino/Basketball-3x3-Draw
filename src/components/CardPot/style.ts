@@ -6,7 +6,9 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.colors.DARK700}CC;
     text-align: center;
     padding: 0.8rem;
-    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .athletes {

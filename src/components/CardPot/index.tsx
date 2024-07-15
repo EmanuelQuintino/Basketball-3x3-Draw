@@ -5,15 +5,16 @@ import { Container } from "./style";
 type TypeProps = {
   name: string;
   athletes: athleteDataTypes[];
+  topSeed?: boolean;
 };
 
-export function CardPot({ name, athletes }: TypeProps) {
+export function CardPot({ name, athletes, topSeed = false }: TypeProps) {
   return (
     <Container>
       <h3>{name}</h3>
       <div className="athletes">
         {athletes.map((athlete) => {
-          return <CardAthlete name={athlete.name} key={athlete.id} />;
+          return <CardAthlete name={athlete.name} key={athlete.id} topSeed={topSeed} />;
         })}
       </div>
     </Container>

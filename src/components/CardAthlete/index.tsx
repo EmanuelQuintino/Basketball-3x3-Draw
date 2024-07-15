@@ -2,11 +2,16 @@ import { Container } from "./style";
 
 type TypeProps = {
   name: string;
+  topSeed?: boolean;
 };
 
-export function CardAthlete({ name }: TypeProps) {
+export function CardAthlete({ name, topSeed = false }: TypeProps) {
+  function drag() {
+    console.log("drag!");
+  }
+
   return (
-    <Container>
+    <Container topSeed={topSeed} draggable onDrag={drag}>
       <i className="material-icons">drag_indicator</i>
       <strong>{name}</strong>
 

@@ -36,7 +36,7 @@ export const Container = styled.form`
     padding: 0.8rem;
     border-radius: 0.8rem;
     margin-left: 0.4rem;
-    background: ${({ theme }) => theme.colors.DARK200};
+    background: ${({ theme }) => theme.colors.DARK200}BB;
     color: ${({ theme }) => theme.colors.LIGHT700};
   }
 

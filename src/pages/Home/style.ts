@@ -69,7 +69,10 @@ export const Container = styled.article`
     td {
       padding: 0.8rem;
       font-weight: 700;
-      /* border: 1px solid ${({ theme }) => theme.colors.LIGHT400}22; */
+    }
+
+    td {
+      border: 1px solid ${({ theme }) => theme.colors.LIGHT400}22;
     }
 
     td:hover {
