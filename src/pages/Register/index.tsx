@@ -28,7 +28,6 @@ export function Register() {
   }
 
   useEffect(() => {
-    // Load athletes from localStorage on component mount
     const athletesFromStorage = JSON.parse(
       localStorage.getItem("@basketball-draw:athletes") || "[]"
     );
@@ -42,7 +41,6 @@ export function Register() {
       {listAthletes.length > 0 && (
         <DragDropContext onDragEnd={handleDragEnd}>
           <div className="pots">
-            {/* Droppable areas for each pot */}
             <Droppable droppableId="pot1" type="group">
               {(provided) => (
                 <div ref={provided.innerRef} {...provided.droppableProps}>
