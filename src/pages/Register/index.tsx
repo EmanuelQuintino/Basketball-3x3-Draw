@@ -61,7 +61,7 @@ export function Register() {
       if (pot == 1 || pot == 2 || pot == 3 || pot == 4) removedAthlete.pot = pot;
 
       if (
-        source.index > destination.index ||
+        source.index >= destination.index ||
         source.droppableId == destination.droppableId
       ) {
         reorderListAthletes.splice(destination.index, 0, removedAthlete);
@@ -91,9 +91,11 @@ export function Register() {
   }
 
   useEffect(() => {
-    const athletesFromStorage = JSON.parse(
+    const athletesFromStorage: athleteDataTypes[] = JSON.parse(
       localStorage.getItem(KEY_ATHLETES_STORAGE) || "[]"
     );
+
+    athletesFromStorage.sort((a, b) => a.pot - b.pot);
     setListAthletes(athletesFromStorage);
   }, []);
 
