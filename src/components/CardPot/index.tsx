@@ -7,9 +7,16 @@ type TypeProps = {
   athletes: athleteDataTypes[];
   topSeed?: boolean;
   indexStart?: number;
+  deleteAthlete: (id: string) => void;
 };
 
-export function CardPot({ name, athletes, topSeed = false, indexStart = 0 }: TypeProps) {
+export function CardPot({
+  name,
+  athletes,
+  topSeed = false,
+  indexStart = 0,
+  deleteAthlete,
+}: TypeProps) {
   return (
     <Container>
       <h3>{name}</h3>
@@ -33,7 +40,7 @@ export function CardPot({ name, athletes, topSeed = false, indexStart = 0 }: Typ
 
                     <strong>{athlete.name}</strong>
 
-                    <button>
+                    <button onClick={() => deleteAthlete(athlete.id)}>
                       <i className="material-icons">close</i>
                     </button>
                   </div>

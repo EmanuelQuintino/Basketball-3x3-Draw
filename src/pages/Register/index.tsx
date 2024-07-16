@@ -73,6 +73,12 @@ export function Register() {
     }
   }
 
+  function handleDeleteAthlete(id: string) {
+    const filteredAthletes = listAthletes.filter((athlete) => athlete.id != id);
+    setListAthletes(filteredAthletes);
+    localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(filteredAthletes));
+  }
+
   useEffect(() => {
     const athletesFromStorage = JSON.parse(
       localStorage.getItem(KEY_ATHLETES_STORAGE) || "[]"
@@ -89,7 +95,12 @@ export function Register() {
           <Droppable droppableId="pot1" type="group">
             {(provided) => (
               <div ref={provided.innerRef} {...provided.droppableProps}>
-                <CardPot name="POTE 1" athletes={pot1} topSeed />
+                <CardPot
+                  name="POTE 1"
+                  athletes={pot1}
+                  topSeed
+                  deleteAthlete={handleDeleteAthlete}
+                />
                 {provided.placeholder}
               </div>
             )}
@@ -97,7 +108,12 @@ export function Register() {
           <Droppable droppableId="pot2" type="group">
             {(provided) => (
               <div ref={provided.innerRef} {...provided.droppableProps}>
-                <CardPot name="POTE 2" athletes={pot2} indexStart={indexStartPot2} />
+                <CardPot
+                  name="POTE 2"
+                  athletes={pot2}
+                  indexStart={indexStartPot2}
+                  deleteAthlete={handleDeleteAthlete}
+                />
                 {provided.placeholder}
               </div>
             )}
@@ -105,7 +121,12 @@ export function Register() {
           <Droppable droppableId="pot3" type="group">
             {(provided) => (
               <div ref={provided.innerRef} {...provided.droppableProps}>
-                <CardPot name="POTE 3" athletes={pot3} indexStart={indexStartPot3} />
+                <CardPot
+                  name="POTE 3"
+                  athletes={pot3}
+                  indexStart={indexStartPot3}
+                  deleteAthlete={handleDeleteAthlete}
+                />
                 {provided.placeholder}
               </div>
             )}
@@ -113,7 +134,12 @@ export function Register() {
           <Droppable droppableId="pot4" type="group">
             {(provided) => (
               <div ref={provided.innerRef} {...provided.droppableProps}>
-                <CardPot name="POTE 4" athletes={pot4} indexStart={indexStartPot4} />
+                <CardPot
+                  name="POTE 4"
+                  athletes={pot4}
+                  indexStart={indexStartPot4}
+                  deleteAthlete={handleDeleteAthlete}
+                />
                 {provided.placeholder}
               </div>
             )}
