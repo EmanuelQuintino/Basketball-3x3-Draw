@@ -62,7 +62,7 @@ export const Container = styled.article`
     }
 
     th {
-      color: ${({ theme }) => theme.colors.DARK700}CC;
+      color: ${({ theme }) => theme.colors.DARK700};
     }
 
     th,

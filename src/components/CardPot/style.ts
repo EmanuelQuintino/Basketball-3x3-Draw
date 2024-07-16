@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   h3 {
     background: ${({ theme }) => theme.colors.PRIMARY500};
-    color: ${({ theme }) => theme.colors.DARK700}CC;
+    color: ${({ theme }) => theme.colors.DARK700};
     text-align: center;
     padding: 0.8rem;
     white-space: nowrap;
