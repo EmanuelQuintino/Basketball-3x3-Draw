@@ -9,13 +9,13 @@ export const Container = styled.div`
 
   header {
     text-align: center;
-    padding: 2rem 0 1.6rem;
+    padding: 4.8rem 0 2.4rem;
     width: 100%;
 
     .addAthleteButton {
       position: absolute;
-      top: 2rem;
-      right: 2rem;
+      top: 4.8rem;
+      right: 4.8rem;
       border-radius: 8px;
       padding: 0.4rem;
 
@@ -31,7 +31,7 @@ export const Container = styled.div`
     }
 
     img {
-      width: 28rem;
+      width: 36rem;
     }
   }
 
@@ -41,7 +41,7 @@ export const Container = styled.div`
   }
 
   footer {
-    padding: 2.4rem 2.4rem;
+    padding: 2.4rem;
     width: 100%;
 
     a {
@@ -56,7 +56,7 @@ export const Container = styled.div`
     }
 
     img {
-      width: 16rem;
+      width: 18rem;
       filter: brightness(0) invert(0.9) grayscale(100%);
     }
   }

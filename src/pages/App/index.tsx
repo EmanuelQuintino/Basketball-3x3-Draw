@@ -5,7 +5,6 @@ import logoReprograma from "../../assets/logo-reprograma-jucas.png";
 
 export function App() {
   const location = useLocation();
-  console.log(location.pathname);
 
   return (
     <Container>

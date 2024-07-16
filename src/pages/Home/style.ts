@@ -34,9 +34,10 @@ export const Container = styled.article`
       font-size: 2rem;
       text-transform: uppercase;
       border-radius: 0.4rem;
+      transition: 100ms;
 
       &:hover {
-        filter: brightness(0.95);
+        filter: brightness(1.1);
       }
     }
   }
@@ -52,9 +53,15 @@ export const Container = styled.article`
       padding: 2rem;
     }
 
-    .trForSpace {
+    .trForSpace td {
       font-size: 0.8rem;
       display: transparent;
+      border: none;
+      padding: 0;
+
+      &:hover {
+        background: none;
+      }
     }
 
     tr {

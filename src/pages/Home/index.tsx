@@ -1,61 +1,49 @@
 import { Container } from "./style";
 import { athleteDataTypes } from "../../@types/athlete";
+import { KEY_ATHLETES_STORAGE } from "../../configs/keyAthletesStorage";
 import { useEffect, useState } from "react";
 
 export function Home() {
-  const [arrayAthletes, setArrayAthletes] = useState([] as athleteDataTypes[]);
-  const [drawAthletes, setDrawAthletes] = useState([] as athleteDataTypes[]);
+  const [arrayAthletes, setArrayAthletes] = useState<athleteDataTypes[]>([]);
+  const [drawnAthletes, setDrawnAthletes] = useState<athleteDataTypes[]>([]);
   const [drawnAthlete, setDrawnAthlete] = useState<athleteDataTypes | null>(null);
 
   function drawAthlete() {
-    if (drawAthletes.length == arrayAthletes.length) {
+    if (drawnAthletes.length >= arrayAthletes.length) {
       alert("Todos os atletas já foram sorteados.");
       return;
     }
 
-    const pot = Math.ceil((drawAthletes.length + 1) / 6);
-    const potAthletes = arrayAthletes.filter((athlete) => athlete.pot == pot);
-
-    const flag = true;
-    while (flag) {
-      const numDraw = Math.ceil(Math.random() * potAthletes.length);
-      const athleteDrawn = potAthletes[numDraw - 1];
-
-      if (!drawAthletes.some((athlete) => athlete.id == athleteDrawn.id)) {
-        setDrawAthletes((prevState) => [...prevState, athleteDrawn]);
-
-        localStorage.setItem(
-          "@basketball-draw:drawn",
-          JSON.stringify([...drawAthletes, athleteDrawn])
-        );
-
-        setDrawnAthlete(athleteDrawn);
-        break;
+    const pots = arrayAthletes.reduce((acc, athlete) => {
+      if (!acc[athlete.pot]) {
+        acc[athlete.pot] = [];
       }
-    }
+      acc[athlete.pot].push(athlete);
+      return acc;
+    }, {} as Record<number, athleteDataTypes[]>);
+
+    console.log(pots);
   }
 
-  function clearDrawnAthletes() {
-    const resp = confirm("Deseja limpar sorteio?");
-    if (resp) {
+  const clearDrawnAthletes = () => {
+    if (window.confirm("Deseja limpar sorteio?")) {
       localStorage.removeItem("@basketball-draw:drawn");
-      setDrawAthletes([]);
+      setDrawnAthletes([]);
       setDrawnAthlete(null);
     }
-  }
+  };
 
   useEffect(() => {
     const athletesFromStorage = JSON.parse(
-      localStorage.getItem("@basketball-draw:athletes") || "[]"
+      localStorage.getItem(KEY_ATHLETES_STORAGE) || "[]"
     );
-
     const drawnFromStorage = JSON.parse(
       localStorage.getItem("@basketball-draw:drawn") || "[]"
     );
 
     setArrayAthletes(athletesFromStorage);
-    setDrawAthletes(drawnFromStorage);
-    setDrawnAthlete(drawnFromStorage[drawnFromStorage.length - 1]);
+    setDrawnAthletes(drawnFromStorage);
+    setDrawnAthlete(drawnFromStorage[drawnFromStorage.length - 1] || null);
   }, []);
 
   return (
@@ -87,44 +75,18 @@ export function Home() {
             </tr>
           </thead>
 
-          <tr className="trForSpace">{"⠀"}</tr>
-
           <tbody>
-            <tr className="pot1">
-              <td>{drawAthletes[0] ? drawAthletes[0].name : "-"}</td>
-              <td>{drawAthletes[1] ? drawAthletes[1].name : "-"}</td>
-              <td>{drawAthletes[2] ? drawAthletes[2].name : "-"}</td>
-              <td>{drawAthletes[3] ? drawAthletes[3].name : "-"}</td>
-              <td>{drawAthletes[4] ? drawAthletes[4].name : "-"}</td>
-              <td>{drawAthletes[5] ? drawAthletes[5].name : "-"}</td>
+            <tr className="trForSpace">
+              <td>{"⠀"}</td>
             </tr>
 
-            <tr className="pot2">
-              <td>{drawAthletes[6] ? drawAthletes[6].name : "-"}</td>
-              <td>{drawAthletes[7] ? drawAthletes[7].name : "-"}</td>
-              <td>{drawAthletes[8] ? drawAthletes[8].name : "-"}</td>
-              <td>{drawAthletes[9] ? drawAthletes[9].name : "-"}</td>
-              <td>{drawAthletes[10] ? drawAthletes[10].name : "-"}</td>
-              <td>{drawAthletes[11] ? drawAthletes[11].name : "-"}</td>
-            </tr>
-
-            <tr className="pot3">
-              <td>{drawAthletes[12] ? drawAthletes[12].name : "-"}</td>
-              <td>{drawAthletes[13] ? drawAthletes[13].name : "-"}</td>
-              <td>{drawAthletes[14] ? drawAthletes[14].name : "-"}</td>
-              <td>{drawAthletes[15] ? drawAthletes[15].name : "-"}</td>
-              <td>{drawAthletes[16] ? drawAthletes[16].name : "-"}</td>
-              <td>{drawAthletes[17] ? drawAthletes[17].name : "-"}</td>
-            </tr>
-
-            <tr className="pot4">
-              <td>{drawAthletes[18] ? drawAthletes[18].name : "-"}</td>
-              <td>{drawAthletes[19] ? drawAthletes[19].name : "-"}</td>
-              <td>{drawAthletes[20] ? drawAthletes[20].name : "-"}</td>
-              <td>{drawAthletes[21] ? drawAthletes[21].name : "-"}</td>
-              <td>{drawAthletes[22] ? drawAthletes[22].name : "-"}</td>
-              <td>{drawAthletes[23] ? drawAthletes[23].name : "-"}</td>
-            </tr>
+            {[1, 2, 3, 4].map((pot) => (
+              <tr key={pot} className={`pot${pot}`}>
+                {[1, 2, 3, 4, 5, 6].map((value, index) => (
+                  <td key={value}>{index}</td>
+                ))}
+              </tr>
+            ))}
           </tbody>
         </table>
       </section>

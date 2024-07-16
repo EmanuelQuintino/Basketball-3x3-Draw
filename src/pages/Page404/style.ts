@@ -25,10 +25,11 @@ export const Container = styled.div`
     font-weight: 700;
     padding: 1rem;
     margin: 1.6rem auto 0;
+    transition: 100ms;
 
     &:hover {
       cursor: pointer;
-      filter: brightness(1.05);
+      filter: brightness(1.1);
     }
   }
 
