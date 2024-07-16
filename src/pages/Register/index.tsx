@@ -58,7 +58,10 @@ export function Register() {
 
       if (pot == 1 || pot == 2 || pot == 3 || pot == 4) removedAthlete.pot = pot;
 
-      if (source.index > destination.index) {
+      if (
+        source.index > destination.index ||
+        source.droppableId == destination.droppableId
+      ) {
         reorderListAthletes.splice(destination.index, 0, removedAthlete);
       } else {
         reorderListAthletes.splice(destination.index - 1, 0, removedAthlete);
