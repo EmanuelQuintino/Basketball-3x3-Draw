@@ -1,14 +1,21 @@
 import { Container } from "./style";
 import { athleteDataTypes } from "../../@types/athlete";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-export function FormRegister() {
-  const [listAthletes, setListAthletes] = useState([] as athleteDataTypes[]);
+type FormProps = {
+  addAthlete: (athlete: athleteDataTypes) => void;
+};
 
-  type Input = athleteDataTypes;
+type Input = {
+  id: string;
+  name: string;
+  pot: string;
+};
 
+type AthletePot = 1 | 2 | 3 | 4;
+
+export function FormRegister({ addAthlete }: FormProps) {
   const {
     register,
     handleSubmit,
@@ -17,32 +24,35 @@ export function FormRegister() {
   } = useForm<Input>();
 
   const onSubmit: SubmitHandler<Input> = (data) => {
+    let pot: AthletePot;
+    switch (data.pot) {
+      case "1":
+        pot = 1;
+        break;
+      case "2":
+        pot = 2;
+        break;
+      case "3":
+        pot = 3;
+        break;
+      case "4":
+        pot = 4;
+        break;
+      default:
+        return;
+    }
+
+    if (!pot) return;
+
     const athlete = {
-      ...data,
       id: uuidv4(),
+      name: data.name,
+      pot: pot,
     };
 
-    if (listAthletes.length < 24) {
-      localStorage.setItem(
-        "@basketball-draw:athletes",
-        JSON.stringify([...listAthletes, athlete])
-      );
-
-      setListAthletes((prevState) => [...prevState, athlete]);
-
-      reset();
-    } else {
-      alert("A lista de atletas está completada!");
-    }
+    addAthlete(athlete);
+    reset();
   };
-
-  useEffect(() => {
-    const athletesFromStorage = JSON.parse(
-      localStorage.getItem("@basketball-draw:athletes") || "[]"
-    );
-
-    setListAthletes(athletesFromStorage);
-  }, []);
 
   return (
     <Container onSubmit={handleSubmit(onSubmit)}>

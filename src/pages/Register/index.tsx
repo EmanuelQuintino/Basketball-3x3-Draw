@@ -12,10 +12,10 @@ import { KEY_ATHLETES_STORAGE } from "../../configs/keyAthletesStorage";
 export function Register() {
   const [listAthletes, setListAthletes] = useState([] as athleteDataTypes[]);
 
-  const pot1 = listAthletes.filter((athlete) => athlete.pot === 1);
-  const pot2 = listAthletes.filter((athlete) => athlete.pot === 2);
-  const pot3 = listAthletes.filter((athlete) => athlete.pot === 3);
-  const pot4 = listAthletes.filter((athlete) => athlete.pot === 4);
+  const pot1 = listAthletes.filter((athlete) => athlete.pot == 1);
+  const pot2 = listAthletes.filter((athlete) => athlete.pot == 2);
+  const pot3 = listAthletes.filter((athlete) => athlete.pot == 3);
+  const pot4 = listAthletes.filter((athlete) => athlete.pot == 4);
 
   const indexStartPot2 = pot1.length;
   const indexStartPot3 = pot1.length + pot2.length;
@@ -54,6 +54,8 @@ export function Register() {
         case "pot4":
           pot = 4;
           break;
+        default:
+          return;
       }
 
       if (pot == 1 || pot == 2 || pot == 3 || pot == 4) removedAthlete.pot = pot;
@@ -67,10 +69,19 @@ export function Register() {
         reorderListAthletes.splice(destination.index - 1, 0, removedAthlete);
       }
 
+      reorderListAthletes.sort((a, b) => a.pot - b.pot);
+
       setListAthletes(reorderListAthletes);
       localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(reorderListAthletes));
       console.log(removedAthlete);
     }
+  }
+
+  function handleAddAthlete(athlete: athleteDataTypes) {
+    const newList = [...listAthletes, athlete];
+    newList.sort((a, b) => a.pot - b.pot);
+    setListAthletes(newList);
+    localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(newList));
   }
 
   function handleDeleteAthlete(id: string) {
@@ -88,7 +99,7 @@ export function Register() {
 
   return (
     <Container>
-      <FormRegister />
+      <FormRegister addAthlete={handleAddAthlete} />
 
       <DragDropContext onDragEnd={handleDragEnd}>
         <div className="pots">
