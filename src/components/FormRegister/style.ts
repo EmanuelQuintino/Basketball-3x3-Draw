@@ -52,10 +52,11 @@ export const Container = styled.form`
     font-weight: 700;
     padding: 0.8rem 2.4rem;
     width: 100%;
+    transition: 100ms;
 
     &:hover {
       cursor: pointer;
-      filter: brightness(1.05);
+      filter: brightness(1.1);
     }
   }
 

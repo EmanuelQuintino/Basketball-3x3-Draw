@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   header {
     text-align: center;
-    padding: 1.6rem 0 1.6rem;
+    padding: 2rem 0 1.6rem;
     width: 100%;
 
     .addAthleteButton {
@@ -41,7 +41,7 @@ export const Container = styled.div`
   }
 
   footer {
-    padding: 2.4rem;
+    padding: 2.4rem 2.4rem;
     width: 100%;
 
     a {

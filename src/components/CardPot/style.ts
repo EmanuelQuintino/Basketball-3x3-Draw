@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  background: ${({ theme }) => theme.colors.DARK300}44;
+  padding: 0.6rem;
+  min-height: 26rem;
+
   h3 {
     background: ${({ theme }) => theme.colors.PRIMARY500};
     color: ${({ theme }) => theme.colors.DARK700};
     text-align: center;
-    padding: 0.8rem;
+    padding: 0.6rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -16,14 +20,14 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 0.8rem;
-    margin-top: 0.8rem;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
 
     div {
       width: 100%;
       color: ${({ theme }) => theme.colors.DARK200};
       border-radius: 0.4rem;
-      padding: 0.8rem;
+      padding: 0.6rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -32,8 +36,7 @@ export const Container = styled.div`
       background: ${({ theme }) => theme.colors.DARK300};
 
       &:hover {
-        /* cursor: grab; */
-        filter: brightness(0.9);
+        filter: brightness(1.1);
       }
 
       i {
