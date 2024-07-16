@@ -23,6 +23,7 @@ export function Register() {
 
   function handleDragEnd(result: DropResult) {
     const { source, destination, type } = result;
+    console.log(result);
 
     if (!result.destination) return;
 
@@ -33,9 +34,8 @@ export function Register() {
       return;
     }
 
-    if (type == "group" && destination?.index) {
-      console.log(destination.index);
-      console.log(Math.ceil((destination.index + 1) / 6));
+    if (type == "group" && destination) {
+      console.log(destination?.index);
 
       const reorderListAthletes = [...listAthletes];
       const [removedAthlete] = reorderListAthletes.splice(source.index, 1);
@@ -58,7 +58,11 @@ export function Register() {
 
       if (pot == 1 || pot == 2 || pot == 3 || pot == 4) removedAthlete.pot = pot;
 
-      reorderListAthletes.splice(destination.index, 0, removedAthlete);
+      if (source.index > destination.index) {
+        reorderListAthletes.splice(destination.index, 0, removedAthlete);
+      } else {
+        reorderListAthletes.splice(destination.index - 1, 0, removedAthlete);
+      }
 
       setListAthletes(reorderListAthletes);
       localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(reorderListAthletes));

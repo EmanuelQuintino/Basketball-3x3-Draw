@@ -36,12 +36,12 @@ export const Container = styled.form`
     padding: 0.8rem;
     border-radius: 0.8rem;
     margin-left: 0.4rem;
-    background: ${({ theme }) => theme.colors.DARK200}BB;
+    background: ${({ theme }) => theme.colors.DARK300};
     color: ${({ theme }) => theme.colors.LIGHT700};
   }
 
   input::placeholder {
-    color: ${({ theme }) => theme.colors.LIGHT700}88;
+    color: ${({ theme }) => theme.colors.LIGHT400}44;
   }
 
   button {

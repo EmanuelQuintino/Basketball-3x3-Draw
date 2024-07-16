@@ -29,7 +29,7 @@ export const Container = styled.div`
       justify-content: space-between;
       gap: 0.8rem;
       width: 100%;
-      background: ${({ theme }) => theme.colors.DARK200}88;
+      background: ${({ theme }) => theme.colors.DARK300};
 
       &:hover {
         /* cursor: grab; */
