@@ -27,7 +27,7 @@ export function App() {
       </main>
 
       <footer>
-        <Link to={""}>
+        <Link to={"https://emanuelquintino.github.io/Page-WDC/"} target="_blank">
           <span>&copy;</span> <img src={logoReprograma} />
         </Link>
       </footer>
