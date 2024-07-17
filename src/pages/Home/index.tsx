@@ -1,47 +1,74 @@
 import { Container } from "./style";
 import { athleteDataTypes } from "../../@types/athlete";
-import { KEY_ATHLETES_STORAGE } from "../../configs/keyAthletesStorage";
 import { useEffect, useState } from "react";
+import {
+  KEY_ATHLETES_STORAGE,
+  KEY_DRAWN_ATHLETES_STORAGE,
+} from "../../configs/keyAthletesStorage";
 
 export function Home() {
   const [arrayAthletes, setArrayAthletes] = useState<athleteDataTypes[]>([]);
   const [drawnAthletes, setDrawnAthletes] = useState<athleteDataTypes[]>([]);
   const [drawnAthlete, setDrawnAthlete] = useState<athleteDataTypes | null>(null);
 
+  const arrayToShow: athleteDataTypes[] = [];
+
+  for (let i = 0; i < 4; i++) {
+    const list = drawnAthletes.filter((value) => value.pot === i + 1);
+    for (let j = 0; j < 6; j++) {
+      arrayToShow.push(
+        list[j]
+          ? list[j]
+          : { id: `${i}-${j}`, name: "-", pot: (i + 1) as athleteDataTypes["pot"] }
+      );
+    }
+  }
+
   function drawAthlete() {
-    if (drawnAthletes.length >= arrayAthletes.length) {
-      alert("Todos os atletas já foram sorteados.");
+    const filteredAthletes = arrayAthletes.filter((athlete) => {
+      return !drawnAthletes.find((drawn) => drawn.id == athlete.id);
+    });
+
+    if (filteredAthletes.length == 0) {
+      alert("Todos os atletas já foram sorteados!");
       return;
     }
 
-    const pots = arrayAthletes.reduce((acc, athlete) => {
-      if (!acc[athlete.pot]) {
-        acc[athlete.pot] = [];
-      }
-      acc[athlete.pot].push(athlete);
-      return acc;
-    }, {} as Record<number, athleteDataTypes[]>);
+    const minPot = Math.min(...[...new Set(filteredAthletes.map((value) => value.pot))]);
 
-    console.log(pots);
+    const athletesToDraw = filteredAthletes.filter((value) => value.pot == minPot);
+
+    const athleteDrawn = athletesToDraw.sort(() => Math.random() - 0.5)[0];
+
+    localStorage.setItem(
+      KEY_DRAWN_ATHLETES_STORAGE,
+      JSON.stringify([...drawnAthletes, athleteDrawn])
+    );
+
+    setDrawnAthletes((prevValue) => [...prevValue, athleteDrawn]);
+    setDrawnAthlete(athleteDrawn);
   }
 
   const clearDrawnAthletes = () => {
     if (window.confirm("Deseja limpar sorteio?")) {
-      localStorage.removeItem("@basketball-draw:drawn");
+      localStorage.removeItem(KEY_DRAWN_ATHLETES_STORAGE);
       setDrawnAthletes([]);
       setDrawnAthlete(null);
     }
   };
 
   useEffect(() => {
-    const athletesFromStorage = JSON.parse(
+    const athletesFromStorage: athleteDataTypes[] = JSON.parse(
       localStorage.getItem(KEY_ATHLETES_STORAGE) || "[]"
     );
-    const drawnFromStorage = JSON.parse(
-      localStorage.getItem("@basketball-draw:drawn") || "[]"
+
+    const drawnFromStorage: athleteDataTypes[] = JSON.parse(
+      localStorage.getItem(KEY_DRAWN_ATHLETES_STORAGE) || "[]"
     );
 
+    athletesFromStorage.sort((a, b) => a.pot - b.pot);
     setArrayAthletes(athletesFromStorage);
+
     setDrawnAthletes(drawnFromStorage);
     setDrawnAthlete(drawnFromStorage[drawnFromStorage.length - 1] || null);
   }, []);
@@ -76,14 +103,14 @@ export function Home() {
           </thead>
 
           <tbody>
-            <tr className="trForSpace">
-              <td>{"⠀"}</td>
-            </tr>
+            <tr className="trForSpace"></tr>
 
             {[1, 2, 3, 4].map((pot) => (
               <tr key={pot} className={`pot${pot}`}>
-                {[1, 2, 3, 4, 5, 6].map((value, index) => (
-                  <td key={value}>{index}</td>
+                {[1, 2, 3, 4, 5, 6].map((value) => (
+                  <td key={`${pot}-${value}`}>
+                    {arrayToShow[(pot - 1) * 6 + (value - 1)].name}
+                  </td>
                 ))}
               </tr>
             ))}

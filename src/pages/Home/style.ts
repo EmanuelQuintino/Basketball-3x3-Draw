@@ -53,17 +53,6 @@ export const Container = styled.article`
       padding: 2rem;
     }
 
-    .trForSpace td {
-      font-size: 0.8rem;
-      display: transparent;
-      border: none;
-      padding: 0;
-
-      &:hover {
-        background: none;
-      }
-    }
-
     tr {
       text-align: center;
     }
@@ -76,6 +65,10 @@ export const Container = styled.article`
     td {
       padding: 0.8rem;
       font-weight: 700;
+    }
+
+    .trForSpace {
+      height: 0.8rem;
     }
 
     td {
