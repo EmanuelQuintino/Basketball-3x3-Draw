@@ -10,7 +10,7 @@ export const Container = styled.article`
     padding: 2rem;
 
     .nameDraw {
-      font-size: 2.4rem;
+      font-size: 3.2rem;
       font-weight: 700;
     }
   }
@@ -20,7 +20,7 @@ export const Container = styled.article`
     align-items: center;
     justify-content: center;
     gap: 2.4rem;
-    padding: 2rem;
+    padding: 2.4rem;
 
     button {
       background: ${({ theme }) => theme.colors.PRIMARY500};
@@ -73,6 +73,7 @@ export const Container = styled.article`
 
     td {
       border: 1px solid ${({ theme }) => theme.colors.LIGHT400}22;
+      width: 10%;
     }
 
     td:hover {
