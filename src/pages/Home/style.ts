@@ -10,7 +10,7 @@ export const Container = styled.article`
     padding: 1.6rem;
 
     .nameDraw {
-      font-size: 2rem;
+      font-size: 2.4rem;
       font-weight: 700;
     }
   }
@@ -31,7 +31,7 @@ export const Container = styled.article`
       border: none;
       padding: 1.4rem 2.4rem;
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       text-transform: uppercase;
       border-radius: 0.4rem;
       transition: 100ms;
