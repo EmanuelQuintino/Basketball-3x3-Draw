@@ -100,41 +100,21 @@ export const Container = styled.article`
 
   @media (min-width: 768px) {
     section:nth-child(1) {
-      width: 100vw;
-      background: ${({ theme }) => theme.colors.PRIMARY500};
-      text-align: center;
-      padding: 2rem;
+      padding: 1.6rem;
 
       .nameDraw {
-        font-size: 3.2rem;
-        font-weight: 700;
+        font-size: 2.4rem;
       }
     }
 
     .drawButtons {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2.4rem;
-      padding: 2.4rem;
+      gap: 2rem;
+      padding: 2rem;
 
       button {
-        background: ${({ theme }) => theme.colors.PRIMARY500};
-        box-shadow: inset 2px 2px 8px 0px ${({ theme }) => theme.colors.LIGHT400}88,
-          7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-
-        width: 28rem;
-        border: none;
-        padding: 1.2rem 7.6rem;
-        font-weight: 700;
-        font-size: 2rem;
-        text-transform: uppercase;
-        border-radius: 0.4rem;
-        transition: 100ms;
-
-        &:hover {
-          filter: brightness(1.1);
-        }
+        width: 26rem;
+        padding: 1.2rem 5.6rem;
+        font-size: 1.6rem;
       }
     }
 
@@ -147,46 +127,13 @@ export const Container = styled.article`
     }
 
     .drawTable {
-      width: 100vw;
-      border-collapse: collapse;
-
-      thead {
-        width: 100vw;
-        background: ${({ theme }) => theme.colors.PRIMARY500};
-        text-align: center;
-        padding: 2rem;
-      }
-
-      tr {
-        text-align: center;
-      }
-
-      th {
-        color: ${({ theme }) => theme.colors.DARK700};
-      }
-
       th,
       td {
-        padding: 0.8rem;
-        font-weight: 700;
-      }
-
-      .trForSpace {
-        height: 0.8rem;
+        font-size: 1.4rem;
       }
 
       td {
-        border: 1px solid ${({ theme }) => theme.colors.LIGHT400}22;
         width: 10%;
-      }
-
-      td:hover {
-        background: ${({ theme }) => theme.colors.DARK200}22;
-        filter: brightness(2);
-      }
-
-      .pot1 {
-        background: ${({ theme }) => theme.colors.DARK200};
       }
     }
   }

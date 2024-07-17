@@ -64,14 +64,14 @@ export const Container = styled.div`
 
   @media (min-width: 768px) {
     header {
-      padding: 4.8rem 0 2.4rem;
+      padding: 3.2rem 0 1.2rem;
 
       .addAthleteButton {
-        top: 5.6rem;
-        right: 5.6rem;
+        top: 4.8rem;
+        right: 4.8rem;
 
         i {
-          font-size: 2.8rem;
+          font-size: 2.6rem;
         }
       }
 
