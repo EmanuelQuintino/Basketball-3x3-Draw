@@ -31,7 +31,7 @@ export const Container = styled.div`
     }
 
     img {
-      width: 26rem;
+      width: 28rem;
     }
   }
 
@@ -52,12 +52,12 @@ export const Container = styled.div`
     }
 
     span {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       font-weight: 700;
     }
 
     img {
-      width: 12rem;
+      width: 14rem;
       filter: brightness(0) invert(0.9) grayscale(100%);
     }
   }
