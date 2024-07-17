@@ -89,7 +89,57 @@ export function Home() {
         </button>
       </section>
 
-      <section>
+      <section className="tableMobile">
+        <table className="drawTable">
+          <thead>
+            <tr>
+              <th>TIME 1</th>
+              <th>TIME 2</th>
+              <th>TIME 3</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr className="trForSpace"></tr>
+
+            {[1, 2, 3, 4].map((pot) => (
+              <tr key={pot} className={`pot${pot}`}>
+                {[1, 2, 3].map((value) => (
+                  <td key={`${pot}-${value}`}>
+                    {arrayToShow[(pot - 1) * 6 + (value - 1)].name}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <table className="drawTable">
+          <thead>
+            <tr>
+              <th>TIME 4</th>
+              <th>TIME 5</th>
+              <th>TIME 6</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr className="trForSpace"></tr>
+
+            {[1, 2, 3, 4].map((pot) => (
+              <tr key={pot} className={`pot${pot}`}>
+                {[4, 5, 6].map((value) => (
+                  <td key={`${pot}-${value}`}>
+                    {arrayToShow[(pot - 1) * 6 + (value - 1)].name}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <section className="tableDesktop">
         <table className="drawTable">
           <thead>
             <tr>

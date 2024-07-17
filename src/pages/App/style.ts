@@ -9,18 +9,18 @@ export const Container = styled.div`
 
   header {
     text-align: center;
-    padding: 4.8rem 0 2.4rem;
+    padding: 2.4rem 0 1.2rem;
     width: 100%;
 
     .addAthleteButton {
       position: absolute;
-      top: 4.8rem;
-      right: 4.8rem;
+      top: 2.4rem;
+      right: 2.4rem;
       border-radius: 8px;
       padding: 0.4rem;
 
       i {
-        font-size: 2.4rem;
+        font-size: 2rem;
         color: ${({ theme }) => theme.colors.DARK200};
         transition: 200ms;
 
@@ -31,7 +31,7 @@ export const Container = styled.div`
     }
 
     img {
-      width: 36rem;
+      width: 22rem;
     }
   }
 
@@ -51,13 +51,42 @@ export const Container = styled.div`
     }
 
     span {
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 700;
     }
 
     img {
-      width: 18rem;
+      width: 14rem;
       filter: brightness(0) invert(0.9) grayscale(100%);
+    }
+  }
+
+  @media (min-width: 768px) {
+    header {
+      padding: 4.8rem 0 2.4rem;
+
+      .addAthleteButton {
+        top: 5.6rem;
+        right: 5.6rem;
+
+        i {
+          font-size: 2.8rem;
+        }
+      }
+
+      img {
+        width: 36rem;
+      }
+    }
+
+    footer {
+      span {
+        font-size: 1.8rem;
+      }
+
+      img {
+        width: 16rem;
+      }
     }
   }
 `;

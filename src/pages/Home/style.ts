@@ -7,10 +7,10 @@ export const Container = styled.article`
     width: 100vw;
     background: ${({ theme }) => theme.colors.PRIMARY500};
     text-align: center;
-    padding: 2rem;
+    padding: 1.4rem;
 
     .nameDraw {
-      font-size: 3.2rem;
+      font-size: 1.8rem;
       font-weight: 700;
     }
   }
@@ -19,19 +19,19 @@ export const Container = styled.article`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2.4rem;
-    padding: 2.4rem;
+    gap: 1.6rem;
+    padding: 1.8rem;
 
     button {
       background: ${({ theme }) => theme.colors.PRIMARY500};
       box-shadow: inset 2px 2px 8px 0px ${({ theme }) => theme.colors.LIGHT400}88,
         7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
 
-      width: 28rem;
+      width: 16rem;
       border: none;
-      padding: 1.2rem 7.6rem;
+      padding: 1.2rem 2.4rem;
       font-weight: 700;
-      font-size: 2rem;
+      font-size: 1.2rem;
       text-transform: uppercase;
       border-radius: 0.4rem;
       transition: 100ms;
@@ -42,6 +42,18 @@ export const Container = styled.article`
     }
   }
 
+  .tableMobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .tableDesktop {
+    display: none;
+  }
+
   .drawTable {
     width: 100vw;
     border-collapse: collapse;
@@ -50,7 +62,7 @@ export const Container = styled.article`
       width: 100vw;
       background: ${({ theme }) => theme.colors.PRIMARY500};
       text-align: center;
-      padding: 2rem;
+      padding: 1.6rem;
     }
 
     tr {
@@ -63,8 +75,9 @@ export const Container = styled.article`
 
     th,
     td {
-      padding: 0.8rem;
+      padding: 0.6rem;
       font-weight: 700;
+      font-size: 1.2rem;
     }
 
     .trForSpace {
@@ -73,7 +86,7 @@ export const Container = styled.article`
 
     td {
       border: 1px solid ${({ theme }) => theme.colors.LIGHT400}22;
-      width: 10%;
+      width: 20%;
     }
 
     td:hover {
@@ -83,6 +96,99 @@ export const Container = styled.article`
 
     .pot1 {
       background: ${({ theme }) => theme.colors.DARK200};
+    }
+  }
+
+  @media (min-width: 768px) {
+    section:nth-child(1) {
+      width: 100vw;
+      background: ${({ theme }) => theme.colors.PRIMARY500};
+      text-align: center;
+      padding: 2rem;
+
+      .nameDraw {
+        font-size: 3.2rem;
+        font-weight: 700;
+      }
+    }
+
+    .drawButtons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.4rem;
+      padding: 2.4rem;
+
+      button {
+        background: ${({ theme }) => theme.colors.PRIMARY500};
+        box-shadow: inset 2px 2px 8px 0px ${({ theme }) => theme.colors.LIGHT400}88,
+          7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+
+        width: 28rem;
+        border: none;
+        padding: 1.2rem 7.6rem;
+        font-weight: 700;
+        font-size: 2rem;
+        text-transform: uppercase;
+        border-radius: 0.4rem;
+        transition: 100ms;
+
+        &:hover {
+          filter: brightness(1.1);
+        }
+      }
+    }
+
+    .tableMobile {
+      display: none;
+    }
+
+    .tableDesktop {
+      display: block;
+    }
+
+    .drawTable {
+      width: 100vw;
+      border-collapse: collapse;
+
+      thead {
+        width: 100vw;
+        background: ${({ theme }) => theme.colors.PRIMARY500};
+        text-align: center;
+        padding: 2rem;
+      }
+
+      tr {
+        text-align: center;
+      }
+
+      th {
+        color: ${({ theme }) => theme.colors.DARK700};
+      }
+
+      th,
+      td {
+        padding: 0.8rem;
+        font-weight: 700;
+      }
+
+      .trForSpace {
+        height: 0.8rem;
+      }
+
+      td {
+        border: 1px solid ${({ theme }) => theme.colors.LIGHT400}22;
+        width: 10%;
+      }
+
+      td:hover {
+        background: ${({ theme }) => theme.colors.DARK200}22;
+        filter: brightness(2);
+      }
+
+      .pot1 {
+        background: ${({ theme }) => theme.colors.DARK200};
+      }
     }
   }
 `;
