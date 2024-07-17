@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   header {
     text-align: center;
-    padding: 4.8rem 0 2.4rem;
+    padding: 5.6rem 0 2.4rem;
     width: 100%;
 
     .addAthleteButton {
@@ -31,7 +31,7 @@ export const Container = styled.div`
     }
 
     img {
-      width: 28rem;
+      width: 24rem;
     }
   }
 
@@ -41,13 +41,14 @@ export const Container = styled.div`
   }
 
   footer {
-    padding: 2.4rem;
+    padding: 1.6rem;
     width: 100%;
 
     a {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0.8rem;
     }
 
     span {
