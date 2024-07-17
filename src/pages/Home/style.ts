@@ -20,7 +20,7 @@ export const Container = styled.article`
     align-items: center;
     justify-content: center;
     gap: 1.6rem;
-    padding: 2rem;
+    padding: 2.4rem;
 
     button {
       background: ${({ theme }) => theme.colors.PRIMARY500};
