@@ -4,14 +4,15 @@ export const Container = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.6rem;
+  gap: 0.4rem;
+  padding: 0 1.2rem;
 
   section {
     position: relative;
   }
 
   section:nth-child(1) {
-    flex: 8;
+    flex: 9;
   }
 
   section:nth-child(2) {
@@ -23,7 +24,7 @@ export const Container = styled.form`
   }
 
   label {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -35,9 +36,11 @@ export const Container = styled.form`
     flex: 1;
     padding: 0.8rem;
     border-radius: 0.8rem;
-    margin-left: 0.4rem;
+    margin-left: 0.2rem;
     background: ${({ theme }) => theme.colors.DARK300};
     color: ${({ theme }) => theme.colors.LIGHT700};
+    font-size: 1.2rem;
+    min-width: 4rem;
   }
 
   input::placeholder {
@@ -50,9 +53,10 @@ export const Container = styled.form`
     box-shadow: 1px 1px 1px #0004;
     border-radius: 0.8rem;
     font-weight: 700;
-    padding: 0.8rem 2.4rem;
+    padding: 0.8rem 1.2rem;
     width: 100%;
     transition: 100ms;
+    font-size: 1.2rem;
 
     &:hover {
       cursor: pointer;
@@ -61,7 +65,22 @@ export const Container = styled.form`
   }
 
   @media (min-width: 768px) {
+    gap: 1.6rem;
+
+    label {
+      font-size: 1.6rem;
+    }
+
+    input,
+    select {
+      padding: 0.8rem;
+      margin-left: 0.4rem;
+      font-size: 1.6rem;
+      min-width: 6rem;
+    }
+
     button {
+      padding: 0.8rem 2.4rem;
       font-size: 1.6rem;
     }
   }
