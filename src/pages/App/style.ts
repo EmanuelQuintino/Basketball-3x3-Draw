@@ -31,7 +31,7 @@ export const Container = styled.div`
     }
 
     img {
-      width: 24rem;
+      width: 28rem;
     }
   }
 
