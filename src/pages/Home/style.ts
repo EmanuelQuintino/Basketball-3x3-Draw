@@ -7,10 +7,10 @@ export const Container = styled.article`
     width: 100vw;
     background: ${({ theme }) => theme.colors.PRIMARY500};
     text-align: center;
-    padding: 1.4rem;
+    padding: 1.6rem;
 
     .nameDraw {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 700;
     }
   }
@@ -20,7 +20,7 @@ export const Container = styled.article`
     align-items: center;
     justify-content: center;
     gap: 1.6rem;
-    padding: 1.8rem;
+    padding: 2rem;
 
     button {
       background: ${({ theme }) => theme.colors.PRIMARY500};
@@ -29,7 +29,7 @@ export const Container = styled.article`
 
       width: 16rem;
       border: none;
-      padding: 1.2rem 2.4rem;
+      padding: 1.4rem 2.4rem;
       font-weight: 700;
       font-size: 1.2rem;
       text-transform: uppercase;
@@ -37,7 +37,7 @@ export const Container = styled.article`
       transition: 100ms;
 
       &:hover {
-        filter: brightness(1.1);
+        filter: brightness(1.05);
       }
     }
   }
@@ -47,7 +47,7 @@ export const Container = styled.article`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 2rem;
   }
 
   .tableDesktop {
@@ -62,7 +62,6 @@ export const Container = styled.article`
       width: 100vw;
       background: ${({ theme }) => theme.colors.PRIMARY500};
       text-align: center;
-      padding: 1.6rem;
     }
 
     tr {
@@ -75,7 +74,7 @@ export const Container = styled.article`
 
     th,
     td {
-      padding: 0.6rem;
+      padding: 0.8rem 0.6rem;
       font-weight: 700;
       font-size: 1.2rem;
     }

@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   header {
     text-align: center;
-    padding: 2.4rem 0 1.2rem;
+    padding: 4.8rem 0 2.4rem;
     width: 100%;
 
     .addAthleteButton {
@@ -20,7 +20,7 @@ export const Container = styled.div`
       padding: 0.4rem;
 
       i {
-        font-size: 2rem;
+        font-size: 2.4rem;
         color: ${({ theme }) => theme.colors.DARK200};
         transition: 200ms;
 
@@ -31,7 +31,7 @@ export const Container = styled.div`
     }
 
     img {
-      width: 22rem;
+      width: 24rem;
     }
   }
 
@@ -51,12 +51,12 @@ export const Container = styled.div`
     }
 
     span {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: 700;
     }
 
     img {
-      width: 14rem;
+      width: 12rem;
       filter: brightness(0) invert(0.9) grayscale(100%);
     }
   }
