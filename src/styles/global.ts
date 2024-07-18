@@ -22,8 +22,8 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
 
     &:focus {
-      outline: transparent;
-      box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.LIGHT400}
+      outline: 1.5px solid ${({ theme }) => theme.colors.LIGHT400};
+      /* box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.LIGHT400} */
     }
   }
 

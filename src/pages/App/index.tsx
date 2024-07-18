@@ -7,7 +7,7 @@ export function App() {
   const location = useLocation();
 
   return (
-    <Container>
+    <Container className="scrollBar">
       <header>
         {location.pathname == "/register" ? (
           <Link to={"/"} className="addAthleteButton">
