@@ -6,8 +6,8 @@ import { CardPot } from "../../components/CardPot";
 import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
 import { KEY_ATHLETES_STORAGE } from "../../configs/keyAthletesStorage";
 
-import { athletesStorage } from "../../configs/athletesStorage";
-localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(athletesStorage));
+// import { athletesStorage } from "../../configs/athletesStorage";
+// localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(athletesStorage));
 
 export function Register() {
   const [listAthletes, setListAthletes] = useState([] as athleteDataTypes[]);
