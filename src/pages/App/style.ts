@@ -40,11 +40,12 @@ export const Container = styled.div`
 
     img {
       width: 28rem;
+      margin-top: 2.4rem;
     }
   }
 
   main {
-    flex: 1;
+    margin-top: -2.4rem;
     width: 100%;
   }
 
