@@ -23,7 +23,6 @@ export const GlobalStyles = createGlobalStyle`
 
     &:focus {
       outline: 1.5px solid ${({ theme }) => theme.colors.LIGHT400};
-      /* box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.LIGHT400} */
     }
   }
 
@@ -53,16 +52,6 @@ export const GlobalStyles = createGlobalStyle`
     overflow: hidden;
     color: transparent;    
     clip: rect(0, 0, 0, 0);
-  }
-
-  .inputError {
-    color: ${({ theme }) => theme.colors.PRIMARY400};
-    font-size: 1.2rem;
-    display: block;
-    position: absolute;
-    margin-top: 0.6rem;
-    right: 0;
-    text-shadow: 1px 1px 1px #0004;
   }
 
   .loading {
@@ -105,10 +94,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   @media (min-width: 768px) {
-    .inputError {
-      font-size: 1.4rem;
-    }
-
     .loading {
       font-size: 1.4rem;
     }

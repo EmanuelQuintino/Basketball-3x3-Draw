@@ -68,6 +68,19 @@ export const Container = styled.form`
     }
   }
 
+  .inputErrorMessage {
+    color: ${({ theme }) => theme.colors.PRIMARY400};
+    font-size: 1.2rem;
+    display: block;
+    position: absolute;
+    margin-top: -2rem;
+    right: 0.8rem;
+  }
+
+  input.inputError:focus {
+    outline: 1.75px solid ${({ theme }) => theme.colors.PRIMARY400}BB;
+  }
+
   @media (min-width: 768px) {
     gap: 1.6rem;
 
@@ -89,5 +102,9 @@ export const Container = styled.form`
         font-size: 1.6rem;
       }
     }
+  }
+
+  .inputErrorMessage {
+    font-size: 1.4rem;
   }
 `;

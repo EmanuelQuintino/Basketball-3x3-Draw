@@ -60,19 +60,20 @@ export function FormRegister({ addAthlete }: FormProps) {
   return (
     <Container onSubmit={handleSubmit(onSubmit)}>
       <section>
+        <span className="inputErrorMessage">{errors.name?.message}</span>
+
         <label htmlFor="name">
           Nome:
           <input
             type="text"
             id="name"
+            className={errors.name ? "inputError" : ""}
             placeholder="Digite o nome do atleta"
             {...register("name", {
               required: "Campo obrigatório!",
             })}
           />
         </label>
-
-        <span className="inputError">{errors.name?.message}</span>
       </section>
 
       <section>
