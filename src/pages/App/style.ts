@@ -14,11 +14,11 @@ export const Container = styled.div`
 
     .toggleButtons {
       position: absolute;
-      top: 2.4rem;
-      right: 2.4rem;
+      top: 3.2rem;
+      right: 3.2rem;
       display: flex;
       align-items: center;
-      gap: 3.2rem;
+      gap: 1.6rem;
 
       button,
       a {

@@ -14,23 +14,23 @@ export function App() {
       <header>
         {location.pathname == "/register" ? (
           <div className="toggleButtons">
-            <button onClick={autoCompleteTableAthletes} title="Auto preencher">
-              <i className="material-icons">group_add</i>
-            </button>
-
             <Link to={"/"} title="Início">
               <i className="material-icons">home</i>
             </Link>
+
+            <button onClick={autoCompleteTableAthletes} title="Auto preencher">
+              <i className="material-icons">group_add</i>
+            </button>
           </div>
         ) : (
           <div className="toggleButtons">
-            <button onClick={generateDrawPDF} title="Baixar sorteio">
-              <i className="material-icons">picture_as_pdf</i>
-            </button>
-
             <Link to={"/register"} title="Adicionar atletas">
               <i className="material-icons">person_add</i>
             </Link>
+
+            <button onClick={generateDrawPDF} title="Baixar sorteio">
+              <i className="material-icons">picture_as_pdf</i>
+            </button>
           </div>
         )}
 
