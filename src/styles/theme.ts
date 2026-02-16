@@ -5,6 +5,7 @@ export const appTheme = {
     DARK200: "#767171",
     DARK300: "#585858",
     DARK400: "#404040",
+    DARK500: "#303030",
     DARK700: "#282828",
     DARK900: "#000000",
     PRIMARY400: "#F2A950",

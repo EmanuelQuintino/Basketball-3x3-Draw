@@ -27,7 +27,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.colors.DARK400};
+    background: linear-gradient(25deg, ${({ theme }) => theme.colors.DARK500}, ${({ theme }) => theme.colors.DARK400});
   }
     
   button {
