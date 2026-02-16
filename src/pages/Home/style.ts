@@ -41,6 +41,10 @@ export const Container = styled.article`
       &:hover {
         filter: brightness(1.05);
       }
+
+      &:active {
+        transform: scale(0.98);
+      }
     }
   }
 
