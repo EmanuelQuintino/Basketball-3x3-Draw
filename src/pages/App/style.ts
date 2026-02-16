@@ -15,7 +15,7 @@ export const Container = styled.div`
     .toggleButtons {
       position: absolute;
       top: 2.4rem;
-      right: 2.4rem;
+      left: 2.4rem;
       display: flex;
       align-items: center;
       gap: 1.6rem;
@@ -76,8 +76,8 @@ export const Container = styled.div`
       padding: 3.2rem 0 1.2rem;
 
       .toggleButtons {
-        top: 4.8rem;
-        right: 4.8rem;
+        top: 3.2rem;
+        left: 3.2rem;
 
         i {
           font-size: 2.6rem;
