@@ -34,7 +34,7 @@ export function AthletesProvider({ children }: { children: ReactNode }) {
 
   function autoCompleteTableAthletes() {
     const resp = confirm(
-      "Deseja completar automaticamente todas as tabelas? (Você perderá os dados atuais)",
+      "Deseja preencher automaticamente todas as tabelas? Esta ação substituirá os dados atuais.",
     );
 
     if (resp) {
