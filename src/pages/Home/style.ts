@@ -4,7 +4,7 @@ export const Container = styled.article`
   flex: 1;
 
   section:nth-child(1) {
-    width: 100vw;
+    width: 100%;
     background: ${({ theme }) => theme.colors.PRIMARY500};
     text-align: center;
     padding: 1.6rem;
@@ -57,7 +57,7 @@ export const Container = styled.article`
   }
 
   .drawTable {
-    width: 100vw;
+    width: 100%;
     border-collapse: collapse;
 
     thead {
