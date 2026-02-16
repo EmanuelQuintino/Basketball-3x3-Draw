@@ -34,7 +34,7 @@ export function AthletesProvider({ children }: { children: ReactNode }) {
   }
 
   const clearAthletes = () => {
-    if (window.confirm("Deseja limpar atletas cadastrados?")) {
+    if (window.confirm("Deseja limpar todos os nomes cadastrados?")) {
       localStorage.removeItem(KEY_ATHLETES_STORAGE);
       setListAthletes([]);
     }
