@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   header {
     text-align: center;
-    padding: 5.6rem 0 2.4rem;
+    padding: 4.8rem 0 0;
     width: 100%;
 
     .toggleButtons {
