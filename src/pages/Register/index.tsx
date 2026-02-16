@@ -98,6 +98,7 @@ export function Register() {
               </div>
             )}
           </Droppable>
+
           <Droppable droppableId="pot2" type="group">
             {(provided) => (
               <div ref={provided.innerRef} {...provided.droppableProps}>
@@ -111,6 +112,7 @@ export function Register() {
               </div>
             )}
           </Droppable>
+
           <Droppable droppableId="pot3" type="group">
             {(provided) => (
               <div ref={provided.innerRef} {...provided.droppableProps}>
@@ -124,6 +126,7 @@ export function Register() {
               </div>
             )}
           </Droppable>
+
           <Droppable droppableId="pot4" type="group">
             {(provided) => (
               <div ref={provided.innerRef} {...provided.droppableProps}>
