@@ -1,7 +1,8 @@
-import { Container } from "./style";
-import { athleteDataTypes } from "../../@types/athlete";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { v4 as uuidv4 } from "uuid";
+import { athleteDataTypes } from "../../@types/athlete";
+import { useAthletes } from "../../hooks/useAthletes";
+import { Container } from "./style";
 
 type FormProps = {
   addAthlete: (athlete: athleteDataTypes) => void;
@@ -16,6 +17,8 @@ type Input = {
 type AthletePot = 1 | 2 | 3 | 4;
 
 export function FormRegister({ addAthlete }: FormProps) {
+  const { clearAthletes } = useAthletes();
+
   const {
     register,
     handleSubmit,
@@ -91,8 +94,11 @@ export function FormRegister({ addAthlete }: FormProps) {
         <span className="inputError">{errors.pot?.message}</span>
       </section>
 
-      <section>
+      <section className="buttons">
         <button type="submit">Registrar</button>
+        <button type="button" onClick={clearAthletes}>
+          Limpar
+        </button>
       </section>
     </Container>
   );

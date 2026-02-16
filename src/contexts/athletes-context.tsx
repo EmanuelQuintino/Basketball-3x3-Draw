@@ -8,6 +8,7 @@ type AthletesContextProps = {
   setListAthletes: React.Dispatch<React.SetStateAction<athleteDataTypes[]>>;
   addAthlete: (athlete: athleteDataTypes) => void;
   deleteAthlete: (id: string) => void;
+  clearAthletes: () => void;
   autoCompleteTableAthletes: () => void;
 };
 
@@ -32,6 +33,13 @@ export function AthletesProvider({ children }: { children: ReactNode }) {
     localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(filteredAthletes));
   }
 
+  const clearAthletes = () => {
+    if (window.confirm("Deseja limpar atletas cadastrados?")) {
+      localStorage.removeItem(KEY_ATHLETES_STORAGE);
+      setListAthletes([]);
+    }
+  };
+
   function autoCompleteTableAthletes() {
     const resp = confirm(
       "Deseja preencher automaticamente todas as tabelas? Esta ação substituirá os dados atuais.",
@@ -50,6 +58,7 @@ export function AthletesProvider({ children }: { children: ReactNode }) {
         setListAthletes,
         addAthlete,
         deleteAthlete,
+        clearAthletes,
         autoCompleteTableAthletes,
       }}
     >

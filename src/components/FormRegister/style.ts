@@ -5,7 +5,6 @@ export const Container = styled.form`
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  padding: 0 1.2rem;
 
   section {
     position: relative;
@@ -20,7 +19,7 @@ export const Container = styled.form`
   }
 
   section:nth-child(3) {
-    flex: 1;
+    flex: 3;
   }
 
   label {
@@ -47,20 +46,25 @@ export const Container = styled.form`
     color: ${({ theme }) => theme.colors.LIGHT400}44;
   }
 
-  button {
-    background: ${({ theme }) => theme.colors.PRIMARY500};
-    color: ${({ theme }) => theme.colors.LIGHT400};
-    box-shadow: 1px 1px 1px #0004;
-    border-radius: 0.8rem;
-    font-weight: 700;
-    padding: 0.8rem 1.2rem;
-    width: 100%;
-    transition: 100ms;
-    font-size: 1.2rem;
+  .buttons {
+    display: flex;
+    gap: 1.2rem;
 
-    &:hover {
-      cursor: pointer;
-      filter: brightness(1.1);
+    button {
+      background: ${({ theme }) => theme.colors.PRIMARY500};
+      color: ${({ theme }) => theme.colors.LIGHT400};
+      box-shadow: 1px 1px 1px #0004;
+      border-radius: 0.8rem;
+      font-weight: 700;
+      padding: 0.8rem 1.2rem;
+      width: 100%;
+      transition: 100ms;
+      font-size: 1.2rem;
+
+      &:hover {
+        cursor: pointer;
+        filter: brightness(1.1);
+      }
     }
   }
 
@@ -79,9 +83,11 @@ export const Container = styled.form`
       min-width: 6rem;
     }
 
-    button {
-      padding: 0.8rem 2.4rem;
-      font-size: 1.6rem;
+    .buttons {
+      button {
+        padding: 0.8rem 2.4rem;
+        font-size: 1.6rem;
+      }
     }
   }
 `;
