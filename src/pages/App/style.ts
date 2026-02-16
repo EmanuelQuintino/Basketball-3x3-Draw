@@ -14,8 +14,8 @@ export const Container = styled.div`
 
     .toggleButtons {
       position: absolute;
-      top: 3.2rem;
-      right: 3.2rem;
+      top: 2.4rem;
+      right: 2.4rem;
       display: flex;
       align-items: center;
       gap: 1.6rem;
@@ -61,7 +61,6 @@ export const Container = styled.div`
 
     span {
       font-size: 1.6rem;
-      font-weight: 700;
     }
 
     img {
@@ -74,7 +73,7 @@ export const Container = styled.div`
     header {
       padding: 3.2rem 0 1.2rem;
 
-      .addAthleteButton {
+      .toggleButtons {
         top: 4.8rem;
         right: 4.8rem;
 
