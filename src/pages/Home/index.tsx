@@ -25,6 +25,11 @@ export function Home() {
   }
 
   function drawAthlete() {
+    if (!arrayAthletes || arrayAthletes.length === 0) {
+      alert("Não há atletas cadastrados. Adicione (+) para realizar o sorteio.");
+      return;
+    }
+
     const filteredAthletes = arrayAthletes.filter((athlete) => {
       return !drawnAthletes.find((drawn) => drawn.id == athlete.id);
     });
