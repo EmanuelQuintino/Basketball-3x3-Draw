@@ -24,8 +24,10 @@ export const Container = styled.article`
 
     button {
       background: ${({ theme }) => theme.colors.PRIMARY500};
-      box-shadow: inset 2px 2px 8px 0px ${({ theme }) => theme.colors.LIGHT400}88,
-        7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+      box-shadow:
+        inset 2px 2px 8px 0px ${({ theme }) => theme.colors.LIGHT400}88,
+        7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+        4px 4px 5px 0px rgba(0, 0, 0, 0.1);
 
       width: 16rem;
       border: none;

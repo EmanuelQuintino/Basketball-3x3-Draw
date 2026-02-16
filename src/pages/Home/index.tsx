@@ -1,10 +1,10 @@
-import { Container } from "./style";
-import { athleteDataTypes } from "../../@types/athlete";
 import { useEffect, useState } from "react";
+import { athleteDataTypes } from "../../@types/athlete";
 import {
   KEY_ATHLETES_STORAGE,
   KEY_DRAWN_ATHLETES_STORAGE,
 } from "../../configs/keyAthletesStorage";
+import { Container } from "./style";
 
 export function Home() {
   const [arrayAthletes, setArrayAthletes] = useState<athleteDataTypes[]>([]);
@@ -19,7 +19,7 @@ export function Home() {
       arrayToShow.push(
         list[j]
           ? list[j]
-          : { id: `${i}-${j}`, name: "-", pot: (i + 1) as athleteDataTypes["pot"] }
+          : { id: `${i}-${j}`, name: "-", pot: (i + 1) as athleteDataTypes["pot"] },
       );
     }
   }
@@ -42,7 +42,7 @@ export function Home() {
 
     localStorage.setItem(
       KEY_DRAWN_ATHLETES_STORAGE,
-      JSON.stringify([...drawnAthletes, athleteDrawn])
+      JSON.stringify([...drawnAthletes, athleteDrawn]),
     );
 
     setDrawnAthletes((prevValue) => [...prevValue, athleteDrawn]);
@@ -59,11 +59,11 @@ export function Home() {
 
   useEffect(() => {
     const athletesFromStorage: athleteDataTypes[] = JSON.parse(
-      localStorage.getItem(KEY_ATHLETES_STORAGE) || "[]"
+      localStorage.getItem(KEY_ATHLETES_STORAGE) || "[]",
     );
 
     const drawnFromStorage: athleteDataTypes[] = JSON.parse(
-      localStorage.getItem(KEY_DRAWN_ATHLETES_STORAGE) || "[]"
+      localStorage.getItem(KEY_DRAWN_ATHLETES_STORAGE) || "[]",
     );
 
     athletesFromStorage.sort((a, b) => a.pot - b.pot);
