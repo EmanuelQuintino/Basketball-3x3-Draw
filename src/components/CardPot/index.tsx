@@ -1,6 +1,6 @@
-import { Container } from "./style";
-import { Draggable } from "react-beautiful-dnd";
+import { Draggable } from "@hello-pangea/dnd";
 import { athleteDataTypes } from "../../@types/athlete";
+import { Container } from "./style";
 
 type TypeProps = {
   name: string;
