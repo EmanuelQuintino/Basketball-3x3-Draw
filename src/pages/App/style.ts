@@ -12,12 +12,20 @@ export const Container = styled.div`
     padding: 5.6rem 0 2.4rem;
     width: 100%;
 
-    .addAthleteButton {
+    .toggleButtons {
       position: absolute;
       top: 2.4rem;
       right: 2.4rem;
-      border-radius: 8px;
-      padding: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 3.2rem;
+
+      button,
+      a {
+        border-radius: 8px;
+        padding: 0.4rem;
+        line-height: 0;
+      }
 
       i {
         font-size: 2.4rem;
