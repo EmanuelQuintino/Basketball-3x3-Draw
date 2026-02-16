@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.form`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 0.8rem;
 
   section {
@@ -11,15 +11,17 @@ export const Container = styled.form`
   }
 
   section:nth-child(1) {
-    flex: 9;
+    grid-column: 1/3;
   }
 
   section:nth-child(2) {
-    flex: 1;
+    grid-column: 1/2;
+    grid-row: 2/3;
   }
 
   section:nth-child(3) {
-    flex: 3;
+    grid-column: 2/3;
+    grid-row: 2/3;
   }
 
   label {
@@ -48,7 +50,7 @@ export const Container = styled.form`
 
   .buttons {
     display: flex;
-    gap: 1.2rem;
+    gap: 0.8rem;
 
     button {
       background: ${({ theme }) => theme.colors.PRIMARY500};
@@ -82,7 +84,25 @@ export const Container = styled.form`
   }
 
   @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 2fr 12rem 1fr;
+    grid-template-rows: 1fr;
     gap: 1.6rem;
+
+    section:nth-child(1) {
+      grid-column: 1/2;
+      grid-row: 1/1;
+    }
+
+    section:nth-child(2) {
+      grid-column: 2/3;
+      grid-row: 1/1;
+    }
+
+    section:nth-child(3) {
+      grid-column: 3/4;
+      grid-row: 1/1;
+    }
 
     label {
       font-size: 1.6rem;
