@@ -1,15 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { ThemeProvider } from "styled-components";
+import { AthletesProvider } from "./contexts/athletes-context.tsx";
 import { AppRoutes } from "./routes/index.tsx";
 import { GlobalStyles } from "./styles/global.ts";
-import { ThemeProvider } from "styled-components";
 import { appTheme } from "./styles/theme.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider theme={appTheme}>
-      <AppRoutes />
-      <GlobalStyles />
+      <AthletesProvider>
+        <AppRoutes />
+        <GlobalStyles />
+      </AthletesProvider>
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

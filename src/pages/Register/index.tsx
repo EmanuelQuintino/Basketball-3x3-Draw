@@ -1,16 +1,13 @@
-import { Container } from "./style";
+import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
 import { athleteDataTypes } from "../../@types/athlete";
-import { useEffect, useState } from "react";
-import { FormRegister } from "../../components/FormRegister";
 import { CardPot } from "../../components/CardPot";
-import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
+import { FormRegister } from "../../components/FormRegister";
 import { KEY_ATHLETES_STORAGE } from "../../configs/keyAthletesStorage";
-
-// import { athletesStorage } from "../../configs/athletesStorage";
-// localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(athletesStorage));
+import { useAthletes } from "../../hooks/useAthletes";
+import { Container } from "./style";
 
 export function Register() {
-  const [listAthletes, setListAthletes] = useState([] as athleteDataTypes[]);
+  const { listAthletes, setListAthletes, addAthlete, deleteAthlete } = useAthletes();
 
   const pot1 = listAthletes.filter((athlete) => athlete.pot == 1);
   const pot2 = listAthletes.filter((athlete) => athlete.pot == 2);
@@ -23,7 +20,6 @@ export function Register() {
 
   function handleDragEnd(result: DropResult) {
     const { source, destination, type } = result;
-    console.log(result);
 
     if (!result.destination) return;
 
@@ -35,8 +31,6 @@ export function Register() {
     }
 
     if (type == "group" && destination) {
-      console.log(destination?.index);
-
       const reorderListAthletes = [...listAthletes];
       const [removedAthlete] = reorderListAthletes.splice(source.index, 1);
 
@@ -78,26 +72,12 @@ export function Register() {
   }
 
   function handleAddAthlete(athlete: athleteDataTypes) {
-    const newList = [...listAthletes, athlete];
-    newList.sort((a, b) => a.pot - b.pot);
-    setListAthletes(newList);
-    localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(newList));
+    addAthlete(athlete);
   }
 
   function handleDeleteAthlete(id: string) {
-    const filteredAthletes = listAthletes.filter((athlete) => athlete.id != id);
-    setListAthletes(filteredAthletes);
-    localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(filteredAthletes));
+    deleteAthlete(id);
   }
-
-  useEffect(() => {
-    const athletesFromStorage: athleteDataTypes[] = JSON.parse(
-      localStorage.getItem(KEY_ATHLETES_STORAGE) || "[]"
-    );
-
-    athletesFromStorage.sort((a, b) => a.pot - b.pot);
-    setListAthletes(athletesFromStorage);
-  }, []);
 
   return (
     <Container>
