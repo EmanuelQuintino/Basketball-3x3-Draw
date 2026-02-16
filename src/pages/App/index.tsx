@@ -34,9 +34,7 @@ export function App() {
           </div>
         )}
 
-        <Link to={"/"}>
-          <img src={logoBasquete} alt="Basquete 3x3" />
-        </Link>
+        <img src={logoBasquete} alt="Basquete 3x3" />
       </header>
 
       <main>
