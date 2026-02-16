@@ -67,7 +67,6 @@ export function Register() {
 
       setListAthletes(reorderListAthletes);
       localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(reorderListAthletes));
-      console.log(removedAthlete);
     }
   }
 

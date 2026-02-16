@@ -45,12 +45,14 @@ export const Container = styled.div`
   }
 
   main {
-    margin-top: -2.4rem;
+    flex: 1;
     width: 100%;
+    margin-top: 2.4rem;
   }
 
   footer {
     padding: 1.6rem;
+    margin: 1.2rem 0;
 
     a {
       display: flex;
