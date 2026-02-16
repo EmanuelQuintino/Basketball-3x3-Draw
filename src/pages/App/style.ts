@@ -52,7 +52,6 @@ export const Container = styled.div`
 
   footer {
     padding: 1.6rem;
-    margin: 1.2rem 0;
 
     a {
       display: flex;
