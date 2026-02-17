@@ -1,8 +1,8 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import logoBasquete from "../../assets/basquete3x3.png";
 import logoReprograma from "../../assets/logo-reprograma-jucas.png";
-import { generateDrawPDF } from "../../libs/generateDrawPDF";
 import { useAthletes } from "../../hooks/useAthletes";
+import { generateDrawPDF } from "../../libs/generateDrawPDF";
 import { Container } from "./style";
 
 export function App() {
@@ -42,7 +42,7 @@ export function App() {
       </main>
 
       <footer>
-        <Link to={"https://emanuelquintino.github.io/Page-WDC/"} target="_blank">
+        <Link to={"/"}>
           <span>&copy;</span> <img src={logoReprograma} />
         </Link>
       </footer>
