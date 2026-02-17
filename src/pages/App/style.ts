@@ -66,7 +66,6 @@ export const Container = styled.div`
 
     img {
       width: 14rem;
-      filter: brightness(0) invert(0.9) grayscale(100%);
     }
   }
 

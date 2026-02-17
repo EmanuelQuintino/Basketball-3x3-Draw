@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import logoBasquete from "../../assets/basquete3x3.png";
-import logoReprograma from "../../assets/logo-reprograma-jucas.png";
+import logoReprograma from "../../assets/logo-reprograma.png";
 import { useAthletes } from "../../hooks/useAthletes";
 import { generateDrawPDF } from "../../libs/generateDrawPDF";
 import { Container } from "./style";
@@ -43,7 +43,7 @@ export function App() {
 
       <footer>
         <Link to={"/"}>
-          <span>&copy;</span> <img src={logoReprograma} />
+          <img src={logoReprograma} />
         </Link>
       </footer>
     </Container>
