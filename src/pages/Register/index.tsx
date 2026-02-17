@@ -2,8 +2,8 @@ import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
 import { athleteDataTypes } from "../../@types/athlete";
 import { CardPot } from "../../components/CardPot";
 import { FormRegister } from "../../components/FormRegister";
-import { KEY_ATHLETES_STORAGE } from "../../configs/keyAthletesStorage";
 import { useAthletes } from "../../hooks/useAthletes";
+import { KEY_ATHLETES_STORAGE } from "../../utils/storageKeys";
 import { Container } from "./style";
 
 export function Register() {

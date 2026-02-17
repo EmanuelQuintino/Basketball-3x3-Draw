@@ -1,6 +1,6 @@
 import { athleteDataTypes } from "../@types/athlete";
 
-export const athletesStorage: athleteDataTypes[] = [
+export const athletesDataExemplo: athleteDataTypes[] = [
   { id: "1", name: "A1", pot: 1 },
   { id: "2", name: "A2", pot: 1 },
   { id: "3", name: "A3", pot: 1 },

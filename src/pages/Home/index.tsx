@@ -3,7 +3,7 @@ import { athleteDataTypes } from "../../@types/athlete";
 import {
   KEY_ATHLETES_STORAGE,
   KEY_DRAWN_ATHLETES_STORAGE,
-} from "../../configs/keyAthletesStorage";
+} from "../../utils/storageKeys";
 import { Container } from "./style";
 
 export function Home() {

@@ -1,7 +1,7 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import logoBasquete from "../../assets/basquete3x3.png";
 import logoReprograma from "../../assets/logo-reprograma-jucas.png";
-import { generateDrawPDF } from "../../configs/generateDrawPDF";
+import { generateDrawPDF } from "../../libs/generateDrawPDF";
 import { useAthletes } from "../../hooks/useAthletes";
 import { Container } from "./style";
 

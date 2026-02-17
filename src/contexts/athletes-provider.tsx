@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
 import { athleteDataTypes } from "../@types/athlete";
-import { athletesStorage } from "../configs/athletesStorage";
-import { KEY_ATHLETES_STORAGE } from "../configs/keyAthletesStorage";
+import { athletesDataExemplo } from "../utils/athletesDataExemplo";
+import { KEY_ATHLETES_STORAGE } from "../utils/storageKeys";
 import { AthletesContext } from "./athletes-context";
 
 export function AthletesProvider({ children }: { children: ReactNode }) {
@@ -36,8 +36,8 @@ export function AthletesProvider({ children }: { children: ReactNode }) {
     );
 
     if (resp) {
-      setListAthletes(athletesStorage);
-      localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(athletesStorage));
+      setListAthletes(athletesDataExemplo);
+      localStorage.setItem(KEY_ATHLETES_STORAGE, JSON.stringify(athletesDataExemplo));
     }
   }
 
